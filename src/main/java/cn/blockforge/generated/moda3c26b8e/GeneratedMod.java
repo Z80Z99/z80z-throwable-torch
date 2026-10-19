@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 @Mod(GeneratedMod.MOD_ID)
 public final class GeneratedMod {
-    public static final String MOD_ID = "mod_a3c26b8e";
+    public static final String MOD_ID = "z80z_throwable_torch";
     public static final DeferredRegister<EntityType<?>> ENTITIES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MOD_ID);
     public static final RegistryObject<EntityType<ThrownTorch>> THROWN_TORCH = ENTITIES.register("thrown_torch",

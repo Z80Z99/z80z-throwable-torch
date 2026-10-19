@@ -1,0 +1,15 @@
+{
+  "entity.z80z_throwable_torch.thrown_torch": "Thrown Torch",
+  "tooltip.z80z_throwable_torch.throw": "Hold use for 0.5s to charge; release to throw",
+  "tooltip.z80z_throwable_torch.place": "Tap and release to place; sneak-use for instant use",
+  "tooltip.z80z_throwable_torch.cancel": "Switch items, sneak, or attack to cancel",
+  "hud.z80z_throwable_torch.charge": "Throw power %s%% - release to throw",
+  "screen.z80z_throwable_torch.config.title": "Throwable Torches Settings",
+  "screen.z80z_throwable_torch.config.animation": "Throw animation: %s",
+  "screen.z80z_throwable_torch.config.animation.OVER_SHOULDER": "Over-shoulder",
+  "screen.z80z_throwable_torch.config.animation.VANILLA": "Vanilla swing only",
+  "screen.z80z_throwable_torch.config.animation.EXTERNAL": "Let other mods pose",
+  "screen.z80z_throwable_torch.config.trail": "Flight trail: %s",
+  "screen.z80z_throwable_torch.config.sparks": "Flight sparks: %s",
+  "screen.z80z_throwable_torch.config.chargeBar": "Charge bar: %s"
+}

@@ -5,7 +5,7 @@ license="MIT"
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
-authors="AutoMods"
+authors="Z80Z99"
 description='''让原版火把支持蓄力抛掷、落地及墙面自动放置、过肩动作、火星与橙色拖尾。短按松开正常交互；潜行右键保留原版即时操作。客户端和服务器都需要安装。'''
 [[dependencies.${mod_id}]]
 modId="forge"

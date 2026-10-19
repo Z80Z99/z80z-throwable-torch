@@ -25,7 +25,7 @@ import java.util.Deque;
 public final class TorchTrail extends RenderType {
     private record Segment(Vec3 from, Vec3 to, long born) {}
     private static final Deque<Segment> SEGMENTS = new ArrayDeque<>();
-    private static final RenderType GLOW = create("mod_a3c26b8e_trail", DefaultVertexFormat.POSITION_COLOR,
+    private static final RenderType GLOW = create("z80z_throwable_torch_trail", DefaultVertexFormat.POSITION_COLOR,
             VertexFormat.Mode.QUADS, 4096, false, true,
             CompositeState.builder().setShaderState(POSITION_COLOR_SHADER)
                     .setTransparencyState(ADDITIVE_TRANSPARENCY).setCullState(NO_CULL)

@@ -28,7 +28,7 @@ public final class TorchHud {
         gui.fill(center - 42, y - 2, center + 42, y + 7, 0xB0201712);
         gui.fill(center - 40, y, center + 40, y + 5, 0xFF493323);
         gui.fill(center - 40, y, center - 40 + width, y + 5, power >= 1 ? 0xFFFFDF91 : 0xFFFFA33A);
-        gui.drawCenteredString(mc.font, Component.translatable("hud.mod_a3c26b8e.charge", Math.round(power * 100)),
+        gui.drawCenteredString(mc.font, Component.translatable("hud.z80z_throwable_torch.charge", Math.round(power * 100)),
                 center, y + 10, 0xFFE2B2);
     }
     private TorchHud() {}

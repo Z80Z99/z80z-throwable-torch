@@ -140,9 +140,9 @@ public final class TorchInput {
     @SubscribeEvent
     public static void tooltip(ItemTooltipEvent event) {
         if (event.getItemStack().is(Items.TORCH)) {
-            event.getToolTip().add(Component.translatable("tooltip.mod_a3c26b8e.throw").withStyle(ChatFormatting.GOLD));
-            event.getToolTip().add(Component.translatable("tooltip.mod_a3c26b8e.place").withStyle(ChatFormatting.GRAY));
-            event.getToolTip().add(Component.translatable("tooltip.mod_a3c26b8e.cancel").withStyle(ChatFormatting.DARK_GRAY));
+            event.getToolTip().add(Component.translatable("tooltip.z80z_throwable_torch.throw").withStyle(ChatFormatting.GOLD));
+            event.getToolTip().add(Component.translatable("tooltip.z80z_throwable_torch.place").withStyle(ChatFormatting.GRAY));
+            event.getToolTip().add(Component.translatable("tooltip.z80z_throwable_torch.cancel").withStyle(ChatFormatting.DARK_GRAY));
         }
     }
     @SubscribeEvent
