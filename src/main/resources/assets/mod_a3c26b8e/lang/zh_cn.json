@@ -1,0 +1,15 @@
+{
+  "entity.mod_a3c26b8e.thrown_torch": "飞行中的火把",
+  "tooltip.mod_a3c26b8e.throw": "按住右键 0.5 秒起蓄力，松手投掷",
+  "tooltip.mod_a3c26b8e.place": "短按松开放置；潜行右键立即使用",
+  "tooltip.mod_a3c26b8e.cancel": "切换物品、潜行或左键可取消蓄力",
+  "hud.mod_a3c26b8e.charge": "投掷力度 %s%% · 松手投出",
+  "screen.mod_a3c26b8e.config.title": "可投掷火把交互 设置",
+  "screen.mod_a3c26b8e.config.animation": "投掷动作:%s",
+  "screen.mod_a3c26b8e.config.animation.OVER_SHOULDER": "过肩投掷",
+  "screen.mod_a3c26b8e.config.animation.VANILLA": "仅原版挥臂",
+  "screen.mod_a3c26b8e.config.animation.EXTERNAL": "交给其他模组",
+  "screen.mod_a3c26b8e.config.trail": "飞行轨迹:%s",
+  "screen.mod_a3c26b8e.config.sparks": "飞行火星:%s",
+  "screen.mod_a3c26b8e.config.chargeBar": "蓄力条:%s"
+}
