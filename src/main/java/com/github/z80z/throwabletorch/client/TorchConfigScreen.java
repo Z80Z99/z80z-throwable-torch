@@ -1,6 +1,6 @@
-package cn.blockforge.generated.moda3c26b8e.client;
+package com.github.z80z.throwabletorch.client;
 
-import cn.blockforge.generated.moda3c26b8e.TorchConfig;
+import com.github.z80z.throwabletorch.TorchConfig;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;

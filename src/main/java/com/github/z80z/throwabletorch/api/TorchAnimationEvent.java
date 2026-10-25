@@ -1,4 +1,4 @@
-package cn.blockforge.generated.moda3c26b8e.api;
+package com.github.z80z.throwabletorch.api;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;

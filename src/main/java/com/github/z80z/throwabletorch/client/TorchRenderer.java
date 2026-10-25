@@ -1,7 +1,7 @@
-package cn.blockforge.generated.moda3c26b8e.client;
+package com.github.z80z.throwabletorch.client;
 
-import cn.blockforge.generated.moda3c26b8e.GeneratedMod;
-import cn.blockforge.generated.moda3c26b8e.ThrownTorch;
+import com.github.z80z.throwabletorch.GeneratedMod;
+import com.github.z80z.throwabletorch.ThrownTorch;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;

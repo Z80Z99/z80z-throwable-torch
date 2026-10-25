@@ -1,8 +1,8 @@
-package cn.blockforge.generated.moda3c26b8e.client;
+package com.github.z80z.throwabletorch.client;
 
-import cn.blockforge.generated.moda3c26b8e.GeneratedMod;
-import cn.blockforge.generated.moda3c26b8e.ThrownTorch;
-import cn.blockforge.generated.moda3c26b8e.TorchConfig;
+import com.github.z80z.throwabletorch.GeneratedMod;
+import com.github.z80z.throwabletorch.ThrownTorch;
+import com.github.z80z.throwabletorch.TorchConfig;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

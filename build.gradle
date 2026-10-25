@@ -1,6 +1,6 @@
 plugins { id 'java'; id 'net.minecraftforge.gradle' version '[6.0,6.2)' }
 version = '1.0.1-r2'
-group = 'cn.blockforge.generated.moda3c26b8e'
+group = 'com.github.z80z.throwabletorch'
 base { archivesName = 'z80z-throwable-torch' }
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 minecraft {

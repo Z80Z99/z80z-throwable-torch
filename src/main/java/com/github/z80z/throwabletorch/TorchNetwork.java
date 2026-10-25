@@ -1,6 +1,6 @@
-package cn.blockforge.generated.moda3c26b8e;
+package com.github.z80z.throwabletorch;
 
-import cn.blockforge.generated.moda3c26b8e.api.TorchAnimationEvent;
+import com.github.z80z.throwabletorch.api.TorchAnimationEvent;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;

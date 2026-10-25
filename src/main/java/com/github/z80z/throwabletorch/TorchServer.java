@@ -1,6 +1,6 @@
-package cn.blockforge.generated.moda3c26b8e;
+package com.github.z80z.throwabletorch;
 
-import cn.blockforge.generated.moda3c26b8e.api.TorchAnimationEvent;
+import com.github.z80z.throwabletorch.api.TorchAnimationEvent;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;

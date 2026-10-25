@@ -1,8 +1,8 @@
-package cn.blockforge.generated.moda3c26b8e.client;
+package com.github.z80z.throwabletorch.client;
 
-import cn.blockforge.generated.moda3c26b8e.GeneratedMod;
-import cn.blockforge.generated.moda3c26b8e.TorchNetwork;
-import cn.blockforge.generated.moda3c26b8e.TorchServer;
+import com.github.z80z.throwabletorch.GeneratedMod;
+import com.github.z80z.throwabletorch.TorchNetwork;
+import com.github.z80z.throwabletorch.TorchServer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;

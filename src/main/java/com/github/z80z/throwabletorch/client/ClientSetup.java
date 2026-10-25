@@ -1,8 +1,8 @@
-package cn.blockforge.generated.moda3c26b8e.client;
+package com.github.z80z.throwabletorch.client;
 
-import cn.blockforge.generated.moda3c26b8e.GeneratedMod;
-import cn.blockforge.generated.moda3c26b8e.ThrownTorch;
-import cn.blockforge.generated.moda3c26b8e.TorchNetwork;
+import com.github.z80z.throwabletorch.GeneratedMod;
+import com.github.z80z.throwabletorch.ThrownTorch;
+import com.github.z80z.throwabletorch.TorchNetwork;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.client.event.EntityRenderersEvent;

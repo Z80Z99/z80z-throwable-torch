@@ -1,4 +1,4 @@
-package cn.blockforge.generated.moda3c26b8e;
+package com.github.z80z.throwabletorch;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
