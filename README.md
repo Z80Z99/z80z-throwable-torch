@@ -2,6 +2,8 @@
 
 适用于 **Minecraft Java 版 1.20.1 + Forge 47.x + Java 17**。无需其他前置模组。多人游戏时，服务器和每位玩家都要安装同一个版本。
 
+**[English](#english) | [简体中文](#简体中文)**
+
 ## 安装
 
 1. 关闭游戏。
@@ -82,3 +84,50 @@
 8. 在出生点保护区或装有领地模组的禁止建造区域测试：不应放置或破坏原方块。
 9. 退出世界重新进入、传送到其他维度：不应留下蓄力姿势或旧轨迹。
 10. 和其他动作模组组合时，如果姿势冲突，将 `animation` 改为 `VANILLA` 或 `EXTERNAL` 后重试。
+
+## English
+
+A Minecraft Java 1.20.1 mod (Forge 47.x, Java 17) with no prerequisites. In multiplayer, the server and every player should run the same version. No new items are added — you throw the vanilla torch itself.
+
+### Controls
+
+| Action | Result |
+| --- | --- |
+| Hold a torch, short right-click then release | Places / interacts normally at the crosshair position |
+| Hold right-click under 0.5s | Not charged yet; release still counts as a short press |
+| Hold right-click past 0.5s | Charge bar appears, arm draws back |
+| Held for 1.5s total | Full charge; holding longer adds nothing |
+| Release while charged | Consumes one torch and throws it along an arc |
+| Sneak + right-click | Fully vanilla instant place/interact, including continuous placing |
+| Switch item, sneak, left-click, open a GUI or lose window focus while charging | Throw cancelled, no torch consumed |
+
+Both hands and left-handed mode are supported. Short-press requires release so charging doesn't waste a torch first. The use key is rebindable.
+
+### Landing rules
+
+- Hitting a supportable top face places a vanilla standing torch; supportable sides place wall torches oriented to the face
+- Placed torches emit the vanilla **level-14 block light** and save / drop / respond to updates normally
+- No ceiling attachment; on invalid landings (occupied, unsupported, liquid, entity, or protection denial) survival mode drops the torch
+- Projectiles convert to item drops after 10s in flight or near the world bottom; creative mode consumes nothing
+- No damage, no entity ignition, no breaking of existing solid blocks
+- Spectators and adventure mode get no remote placing, so build restrictions can't be bypassed
+
+### Animation & effects
+
+- Third-person draw-back and over-the-shoulder throw; first-person tilt-charge and forward swing, vanilla arm swing kept; server-synced so nearby players see it
+- Two vanilla flame particles per tick as sparks; trajectory trail kept for 6 ticks; vanilla throw/impact sounds reused
+- The flying torch reuses the vanilla torch block model and resource-pack textures — no extra assets
+- The trail is a self-lit visual effect; real lighting starts when the torch places successfully
+
+### Config
+
+Client config at `config/z80z_throwable_torch-client.toml` (edit while the game is closed), or in game via **Mod list → Z80Z Throwable Torch → Config** (applies instantly):
+
+| Key | Values | Purpose |
+| --- | --- | --- |
+| `animation` | `OVER_SHOULDER` | Default draw-back + over-shoulder throw |
+| `animation` | `VANILLA` | Keep only the vanilla arm swing |
+| `animation` | `EXTERNAL` | Let other animation mods take over |
+| `trail` / `sparks` / `chargeBar` | `true` / `false` | Toggle trail, sparks, charge bar |
+
+Only vanilla `minecraft:torch` is hooked — soul torches, redstone torches and modded items are untouched. Placement checks world border, replaceable space, support, build permissions and Forge `BlockEvent.EntityPlaceEvent`; cancelled events restore the block and drop the torch. Animation API: see [动画兼容说明](docs/动画兼容说明.md).
