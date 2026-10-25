@@ -1,0 +1,98 @@
+name: build-release
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Read version
+        id: ver
+        run: |
+          VER=$(grep -oP "^\s*version\s*=\s*'\K[^']+" build.gradle | head -1)
+          if [ -z "$VER" ]; then
+            echo "Cannot determine version from build.gradle" >&2
+            exit 1
+          fi
+          echo "ver=$VER" >> "$GITHUB_OUTPUT"
+
+      - name: Check whether release exists
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VER: ${{ steps.ver.outputs.ver }}
+        run: |
+          if gh release view "v$VER" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Smoke-test toolchain (release already published)
+        if: steps.check.outputs.exists == 'true'
+        run: bash ./gradlew help --no-daemon --console=plain
+
+      - name: Build
+        if: steps.check.outputs.exists == 'false'
+        run: bash ./gradlew build --no-daemon --console=plain -x test
+
+      - name: Collect jars
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          mkdir -p out
+          for g in build/libs/z80z-throwable-torch-*.jar; do cp $g out/; done
+          rm -f out/*-sources.jar out/*-dev.jar out/*-dev-shadow.jar out/*-shadow.jar
+          ls -la out/
+
+      - name: Create GitHub release
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VER: ${{ steps.ver.outputs.ver }}
+        run: |
+          gh release create "v$VER" out/*.jar --repo "$GITHUB_REPOSITORY" --title "v$VER" --generate-notes
+
+      - name: Check platform tokens
+        id: platform
+        if: steps.check.outputs.exists == 'false'
+        env:
+          CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          MR_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          CF_ID: ${{ vars.CURSEFORGE_ID }}
+          MR_ID: ${{ vars.MODRINTH_ID }}
+        run: |
+          if [ -n "$CF_TOKEN" ] && [ -n "$MR_TOKEN" ] && [ -n "$CF_ID" ] && [ -n "$MR_ID" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to CurseForge and Modrinth
+        if: steps.check.outputs.exists == 'false' && steps.platform.outputs.enabled == 'true'
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: ${{ vars.MODRINTH_ID }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          curseforge-id: ${{ vars.CURSEFORGE_ID }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          minecraft: 1.20.1
+          loaders: forge
+          game-versions: 1.20.1
+          java: 17
+          files: out/*.jar
+          changelog: ${{ github.event.head_commit.message }}
